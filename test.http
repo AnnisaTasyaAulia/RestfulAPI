@@ -1,0 +1,100 @@
+# Create User
+POST http://localhost:3000/api/users
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username" : "TASYA",
+  "password" : "admin",
+  "name" : "SELPI"
+}
+
+###
+
+# Login User
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username" : "TASYA",
+  "password" : "admin"
+}
+
+###
+
+# Get Current User
+GET http://localhost:3000/api/users/current
+Content-Type: application/json
+Accept: application/json
+Authorization: 098d2d90-2fa7-47f2-8e45-bb49cde02a88
+
+###
+
+# Update Current User
+PATCH http://localhost:3000/api/users/current
+Content-Type: application/json
+Accept: application/json
+Authorization:098d2d90-2fa7-47f2-8e45-bb49cde02a88
+
+{
+  "name" : "selpia new"
+}
+
+###
+
+# Logout User
+DELETE http://localhost:3000/api/users/logout
+Content-Type: application/json
+Accept: application/json
+Authorization:098d2d90-2fa7-47f2-8e45-bb49cde02a88
+
+###
+
+# Create Playlist
+POST http://localhost:3000/api/playlists
+Content-Type: application/json
+Accept: application/json
+Authorization: 098d2d90-2fa7-47f2-8e45-bb49cde02a88
+
+{
+  "title" : "HELLO",
+  "artist" : "ADELE",
+  "composer" : "ADELE",
+  "duration" : 300, 
+  "category" : "pop",
+  "listeners" : 200
+}
+
+###
+
+# Get Playlist by ID
+GET http://localhost:3000/api/playlists/
+Content-Type: application/json
+Accept: application/json
+Authorization: 098d2d90-2fa7-47f2-8e45-bb49cde02a88
+
+###
+
+# Update Playlist by ID
+PUT http://localhost:3000/api/playlists/8
+Content-Type: application/json
+Accept: application/json
+Authorization: 098d2d90-2fa7-47f2-8e45-bb49cde02a88
+
+{
+  "title" : "bintang kecil",
+  "artist" : "anak anak",
+  "composer" : "titik puspa",
+  "duration" : 300,
+  "category" : "anak anak",
+  "listeners" : 200
+}
+
+###
+
+# Delete Playlist by ID
+DELETE http://localhost:3000/api/playlists/8
+Content-Type: application/json
+Accept: application/json
+Authorization:098d2d90-2fa7-47f2-8e45-bb49cde02a88

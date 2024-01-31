@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  username String    @id @db.VarChar(100)
+  password String    @db.VarChar(100)
+  name     String    @db.VarChar(100)
+  token    String?   @db.VarChar(100)
+  playlists Playlist[]
+
+  @@map("users")
+}
+
+model Playlist {
+  id          Int      @id @default(autoincrement())
+  title       String   
+  artist      String   
+  composer    String   
+  duration    Int      
+  category    String
+  listeners   Int
+  username    String    @db.VarChar(100)
+  user        User      @relation(fields: [username], references: [username])
+
+  @@map("playlists")
+}
